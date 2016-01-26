@@ -37,8 +37,9 @@ DWORD   p32_addNewSection(PP32_HNDS p32Hnds,CONST CHAR* CONST sName,DWORD sChara
 		else {
 			  HANDLE hProcHeap;
 			  
-			  UINT tSize = (lSize + hSize + sSize);
-			  if((UINT)tSize <= (UINT)(lSize + hSize)) return (DWORD)P32_INTOVERFLOW_ERROR;
+			  long long int tmpSize = (lSize + hSize + sSize);
+			  UINT tSize = (UINT)tmpSize; /*lossy conversion*/
+			  if(tSize < tmpSize) return (DWORD)P32_INTOVERFLOW_ERROR;
 			 
 			  hProcHeap = GetProcessHeap();
 			  if(hProcHeap == NULL) return (DWORD)P32_GETHEAP_ERROR;
