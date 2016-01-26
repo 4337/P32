@@ -31,7 +31,7 @@
 typedef struct {
 	
 	    HANDLE                hFile;
-	    DWORD                 errorCode;
+	    /*DWORD                 errorCode;*/
 	    DWORD                 ep;
 	    DWORD                 oEp;
 	    PIMAGE_SECTION_HEADER nSection;
