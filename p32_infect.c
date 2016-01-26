@@ -39,7 +39,7 @@ DWORD   p32_addNewSection(PP32_HNDS p32Hnds,CONST CHAR* CONST sName,DWORD sChara
 			  HANDLE hProcHeap;
 			  
 			  unsigned long long tmpSize = (unsigned long long)llabs(lSize + hSize);
-			  if(tmpSize < lSize + hSize) return (DWORD)P32_INTOVERFLOW_ERROR;
+			  if(tmpSize < lSize + hSize) return (DWORD)P32_INTOVERFLOW_ERROR; /* to jest w sumie nadmiarowe DWORD+DWORD jest zawsze mniejszy niz ulong ulong */
 			  tmpSize += sSize;
 			  tSize    = (UINT)tmpSize;
 			  if(tSize < tmpSize) return (DWORD)P32_INTOVERFLOW_ERROR;             /* ??!??!! */
