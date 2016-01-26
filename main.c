@@ -7,7 +7,7 @@
 
 int main(int argc, char *argv[]) {
 	
-	P32_HNDS p32Hnds = {NULL,P32_NO_ERROR,0,0,NULL};
+	P32_HNDS p32Hnds = {NULL,0,0,NULL};
 	         p32Hnds.hFile = p32_openFile("F:\\P32C\\calc12.exe");
 	        
 	if((p32Hnds.hFile != INVALID_HANDLE_VALUE) && (p32Hnds.hFile != NULL)) {
